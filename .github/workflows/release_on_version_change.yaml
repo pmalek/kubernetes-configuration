@@ -27,6 +27,7 @@ jobs:
       - run: |
           echo "version=${{ steps.version.outputs.version }}"
           echo "latest=${{ steps.version.outputs.latest }}"
+          echo "latest_eq_latest=${{ steps.version.outputs.latest == 'latest' }}"
   trigger_release:
     needs:
     - version
